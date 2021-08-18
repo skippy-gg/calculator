@@ -1,0 +1,69 @@
+/* Main HTML Containers */
+body{
+    background-color: lightgray;
+    font-family: monospace;
+    font-size: 24px;
+}
+
+main{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Calculator Container */
+.calculator{
+    width: 350px;
+    background-color: rgb(85, 85, 85);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Calculator Screen */
+.calculator-screen{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    font-size: 30px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#workingValues{
+    color: rgb(133, 133, 133);
+}
+
+/* Calculator Buttons */
+.calculatorBtns{
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 75px);
+    grid-gap: 10px;
+}
+
+.calculatorHeader{
+    display: grid;
+    grid-template-columns: repeat(2, 170px);
+    grid-template-rows: repeat(1, 60px);
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.calculatorBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.calculatorBtn:hover{
+    background-color: lightgray;
+}
+
+.calculatorBtn:active{
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.6) inset;
+}
