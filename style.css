@@ -16,6 +16,7 @@ main{
     width: 350px;
     background-color: rgb(85, 85, 85);
     padding: 10px;
+    border: solid 5px rgb(85, 85, 85);
     border-radius: 10px;
 }
 
@@ -29,7 +30,7 @@ main{
     height: 100px;
     background-color: white;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #workingValues{
