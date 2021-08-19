@@ -33,25 +33,25 @@ function multiply(a,b){
     return a*b;
 }
 
-function diivde(a,b){
+function divide(a,b){
     return a/b;
 }
 
-function operate(operator, a, b){
+function operation(operator, a, b){
     if (operator == ADD){
-        return add(a,b)
+        return add(a,b);
     }
 
     else if (operator == SUBTRACT){
-        return subtract(a,b)
+        return subtract(a,b);
     }
 
     else if (operator == MULTIPLY){
-        return multiply(a,b)
+        return multiply(a,b);
     }
     
     else if (operator == DIVIDE){
-        return divide(a,b)
+        return divide(a,b);
     }
 }
 
@@ -59,12 +59,23 @@ function testLOL(e){
     if (operators.includes(e.target.textContent)){
         currOperator = e.target.textContent;
     }
-    if (e.target.textContent == "Clear"){
-        finalValues.textContent = "";
+
+    if (e.target.textContent == CLEAR){
+        finalValues.textContent = "0";
         currExpression = "";
         workingValues.textContent = "";
     }
+
+    if (e.target.textContent == DELETE & currExpression.length>=1){
+        currExpression = currExpression.slice(0,(currExpression.length)-1);
+        workingValues.textContent = currExpression;
+    }
+
     if (!calcFunctions.includes(e.target.textContent)){
+        if (currOperator == DIVIDE & e.target.textContent == "0"){
+            alert("You cannot divide by 0!");
+            return;
+        }
     currExpression+=(e.target.textContent);
     workingValues.textContent = currExpression;
     }
@@ -74,9 +85,15 @@ function testLOL(e){
         let test = currExpression.split(currOperator);
         console.log(currExpression);
         console.log(test);
+        if (currExpression.includes(".")){
+            a = parseFloat(test[0]);
+            b = parseFloat(test[1]);
+        }
+        else{
         a = parseInt(test[0]);
         // operator = test[1];
         b = parseInt(test[1]);
-        finalValues.textContent = operate(currOperator, a, b);
+        }
+        finalValues.textContent = operation(currOperator, a, b);
     }
 }
